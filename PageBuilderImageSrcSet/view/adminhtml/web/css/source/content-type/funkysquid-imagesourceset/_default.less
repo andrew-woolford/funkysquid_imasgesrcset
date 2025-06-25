@@ -1,0 +1,56 @@
+// -------------------------------------------------------
+// Copyright © Funky Squid Labs Ltd. All rights reserved.
+// See COPYING.txt for license details.
+// -------------------------------------------------------
+
+//
+//  Default appearance styles.
+//  _____________________________________________
+
+[data-content-type='funkysquid_imagesourceset'] {
+  // Custom class example
+  .my-class {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 20px;
+  }
+}
+
+// Required when using a custom SVG icon for your content type in the Page Builder panel
+.icon-imagesourceset {
+  content: url('@{baseDir}FunkySquid_PageBuilderImageSrcSet/css/images/content-type/funkysquid-imagesourceset/appearance/icon-imagesourceset.svg');
+  width: 16px;
+  height: 16px;
+  margin-bottom: -2px;
+  margin-left: 1px;
+}
+
+.pagebuilder-content-type [data-content-type='funkysquid_imagesourceset'] {
+  box-sizing: border-box;
+  margin: 0;
+
+  div.pagebuilder-image-empty-preview {
+    align-items: center;
+    background: @color-white-fog;
+    border-radius: inherit;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    width: 100%;
+
+    span {
+      color: @color-gray65-lighten;
+    }
+  }
+
+  figcaption {
+    padding: 15px 0;
+    word-wrap: break-word;
+  }
+
+  .preview-image,
+  [data-element='link'],
+  [data-element='link'] img {
+    border-radius: inherit;
+  }
+}

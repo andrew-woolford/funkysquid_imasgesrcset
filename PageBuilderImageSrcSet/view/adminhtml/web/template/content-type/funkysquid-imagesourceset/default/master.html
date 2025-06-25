@@ -1,0 +1,28 @@
+<!--
+/**
+ * Copyright © Funky Squid Labs Ltd. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<figure attr="data.main.attributes"
+     ko-style="Object.assign({}, data.main.style(), !data.desktop_image.attributes().src ? {} : {borderStyle: 'none'})"
+     css="data.main.css">
+     <a if="data.link.attributes().href" attr="data.link.attributes" ko-style="data.link.style" css="data.link.css">
+          <picture>
+              <source data-bind="attr: { 'data-element':'mobile_image', 'srcset': data.mobile_image.attributes().src, 'src': data.mobile_image.attributes().src, 'alt': data.mobile_image.attributes().alt, 'height': data.mobile_image.attributes().height, 'width': data.mobile_image.attributes().width}" media="(max-width: 600px)" css="data.mobile_image.css" ko-style="data.mobile_image.style"/>
+              <source data-bind="attr: { 'data-element':'tablet_image', 'srcset': data.tablet_image.attributes().src, 'src': data.tablet_image.attributes().src, 'alt': data.mobile_image.attributes().alt, 'height': data.tablet_image.attributes().height, 'width': data.tablet_image.attributes().width}" media="(max-width: 1024px)" css="data.tablet_image.css" ko-style="data.tablet_image.style" />
+              <img class="banner-img" data-bind="attr: { 'alt': data.mobile_image.attributes().alt, 'height': data.desktop_image.attributes().height, 'width': data.desktop_image.attributes().width, 'loading': data.desktop_loading.attributes().value}" attr="data.desktop_image.attributes" ko-style="data.desktop_image.style" />
+          </picture>
+      </a>
+      <ifnot args="data.link.attributes().href">
+          <picture>
+              <source data-bind="attr: { 'data-element':'mobile_image', 'srcset': data.mobile_image.attributes().src, 'src': data.mobile_image.attributes().src, 'alt': data.mobile_image.attributes().alt, 'height': data.mobile_image.attributes().height, 'width': data.mobile_image.attributes().width}" media="(max-width: 600px)" css="data.mobile_image.css" ko-style="data.mobile_image.style"/>
+              <source data-bind="attr: { 'data-element':'tablet_image', 'srcset': data.tablet_image.attributes().src, 'src': data.tablet_image.attributes().src, 'alt': data.mobile_image.attributes().alt, 'height': data.tablet_image.attributes().height, 'width': data.tablet_image.attributes().width}" media="(max-width: 1024px)" css="data.tablet_image.css" ko-style="data.tablet_image.style" />
+              <img class="banner-img" data-bind="attr: { 'alt': data.mobile_image.attributes().alt, 'height': data.desktop_image.attributes().height, 'width': data.desktop_image.attributes().width, 'loading': data.desktop_loading.attributes().value}" attr="data.desktop_image.attributes" ko-style="data.desktop_image.style" />
+          </picture>
+      </ifnot>
+
+     <figcaption if="data.caption.html()" attr="data.caption.attributes" css="data.caption.css" html="data.caption.html"
+          ko-style="data.caption.style">
+     </figcaption>
+</figure>
